@@ -1,0 +1,12 @@
+(define (myfilter myfunc mylist)
+  (if (null? mylist)
+    '()
+    (if (myfunc (car mylist))
+      (cons (car mylist) (myfilter myfunc (cdr mylist)))
+      (myfilter myfunc (cdr mylist))
+      )
+    )
+  )
+
+(display (myfilter (lambda (x) (>= x 2)) '(1 2 3 4 5 6)))
+(newline)

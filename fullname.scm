@@ -1,0 +1,5 @@
+(define (name father child)
+  (append child (cons father '()))
+  )
+(display (name "Ntanga" (list "Junior" "Isaac")))
+(newline)

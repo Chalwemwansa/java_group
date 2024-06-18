@@ -1,0 +1,8 @@
+(define (myreduce myfunc mylist)
+  (if (null? (cdr mylist))
+    (car mylist)
+    (myfunc (car mylist) (myreduce myfunc (cdr mylist)))
+    )
+  )
+(display (myreduce (lambda (x y) (+ x y)) (list 1 2 3 4)))
+(newline)
